@@ -1,16 +1,22 @@
 const axios = require('axios').default
 
-module.exports = async (url, data, method, option) => {
+module.exports = async ({
+  url,
+  data,
+  logger,
+  method,
+  options,
+}) => {
   try {
     const res = await axios({
       url,
       data,
       method,
-      ...option,
+      ...options,
     })
     return res
   } catch (e) {
-    console.log(e)
+    logger.error(e)
     return e
   }
 }

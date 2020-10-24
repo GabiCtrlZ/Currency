@@ -40,7 +40,7 @@ module.exports = (n, start) => {
         to,
       })
     }
-    edges.unshift(...nodes[to])
+    edges.unshift(...(nodes[to] || []))
     nodes[to] = []
   }
 
@@ -64,9 +64,6 @@ module.exports = (n, start) => {
 
   return {
     path,
-    profit: ((d[start] - 1) * 100).toFixed(2),
+    profit: ((d[start] - 1) * 100),
   }
 }
-
-// [find_cycle(nodes, item) for item in nodes]
-// console.log(findCycle(data, 'dollar'))

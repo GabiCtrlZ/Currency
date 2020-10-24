@@ -1,50 +1,9 @@
 const findCycles = require('../../lib/find-cycles')
 const generateGraph = require('../../lib/generate-graph')
 
-const g = {
-  dollar: [
-    {
-      to: 'euro',
-      from: 'dollar',
-      bank: 'bank1',
-      weight: 0.84,
-    },
-    {
-      to: 'nis',
-      from: 'dollar',
-      bank: 'bank2',
-      weight: 3.38,
-    },
-  ],
-  euro: [
-    {
-      to: 'nis',
-      from: 'euro',
-      bank: 'bank1',
-      weight: 4,
-    },
-    {
-      to: 'dollar',
-      from: 'euro',
-      bank: 'bank1',
-      weight: 1.4,
-    },
-  ],
-  nis: [
-    {
-      to: 'euro',
-      from: 'nis',
-      bank: 'bank1',
-      weight: 0.25,
-    },
-    {
-      to: 'dollar',
-      from: 'nis',
-      bank: 'bank2',
-      weight: 0.3,
-    },
-  ],
-}
+let graph = {}
+let day
+let cycles = []
 
 module.exports = async (req, res) => {
   const {
@@ -52,12 +11,29 @@ module.exports = async (req, res) => {
   } = req
 
   try {
-    const graph = await generateGraph()
-    console.log(graph)
+    const today = new Date().getDay()
+    if (today === day) {
+      logger.info('graph and cycle already exists in cache, returning caches values')
+
+      return res.json({
+        success: true,
+        data: {
+          cycles,
+          graph,
+        },
+      })
+    }
+
+    logger.info('renewing graph and cycles')
+
+    graph = await generateGraph(logger)
+    cycles = Object.keys(graph).map((coin) => findCycles(graph, coin))
+    day = today
+
     return res.json({
       success: true,
       data: {
-        cycles: Object.keys(g).map((coin) => findCycles(g, coin)),
+        cycles,
         graph,
       },
     })

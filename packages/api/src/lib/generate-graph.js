@@ -1,26 +1,15 @@
 const request = require('./request')
 const refactorResponse = require('./refactor-response')
+const { API_URL, CURRENCIES } = require('../consts')
 
-module.exports = async () => {
-  const currencies = ['EUR', 'USD', 'ILS', 'GBP', 'JPY', 'PLN', 'NZD', 'AUD', 'CZK', 'KRW']
-  const baseUrl = 'https://api.exchangeratesapi.io/latest'
-  const graph = {}
+module.exports = async (logger) => {
+  logger.info('attempting to create graph')
 
-  return Promise
-    .all(currencies
-      .map((currency) => (
-        request(
-          `${baseUrl}?base=${currency}`,
-          {},
-          'GET',
-          {},
-        )
-      ))).then((values) => {
-        values.forEach(({ data }) => { graph[data.base] = refactorResponse(data) })
-        return graph
-      }).catch(e => {
-        console.log(e)
-        return {}
-      })
+  const values = await Promise.all(CURRENCIES.map((currency) => request({
+    logger,
+    url: `${API_URL}?base=${currency}`,
+    method: 'GET',
+  })))
 
+  return values.reduce((pre, { data }) => ({ ...pre, [data.base]: refactorResponse(data) }), {})
 }
