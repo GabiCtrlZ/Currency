@@ -8,6 +8,7 @@ import Header from './Components/Header'
 import Loader from './Components/Loader'
 import { setEnqueueSnackbar } from './lib/snackbar'
 import MainRouter from './MainRouter'
+import { getCycles } from './store/actions/app'
 
 const useStyles = makeStyles({
   app: {
@@ -27,7 +28,12 @@ const useStyles = makeStyles({
 
 function App(props) {
   const classes = useStyles(props)
+  const { dispatch } = props
   const { enqueueSnackbar } = useSnackbar()
+
+  useEffect(async () => {
+    dispatch(getCycles())
+  }, [])
 
   useEffect(() => {
     setEnqueueSnackbar(enqueueSnackbar)

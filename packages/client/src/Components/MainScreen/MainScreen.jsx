@@ -1,18 +1,17 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import { connect } from 'react-redux'
+import { Grid } from '@material-ui/core'
 
-const useStyles = makeStyles(({ spacing }) => ({
+import CyclesTable from '../CyclesTable/CyclesTable'
+import GraphView from '../GraphView/GraphView'
+
+const useStyles = makeStyles(() => ({
   container: {
     display: 'flex',
     flexDirection: 'column',
     overflow: 'hidden',
     flexGrow: 1,
-  },
-  loader: {
-    display: 'flex',
-    justifyContent: 'center',
-    marginTop: spacing(6),
   },
 }), { name: 'MainScreen' })
 
@@ -21,9 +20,14 @@ function MainScreen(props) {
 
   return (
     <div className={classes.container}>
-      <div>
-        something
-      </div>
+      <Grid container spacing={0}>
+        <Grid item xs={6}>
+          <CyclesTable />
+        </Grid>
+        <Grid item xs={6}>
+          <GraphView />
+        </Grid>
+      </Grid>
     </div>
   )
 }
