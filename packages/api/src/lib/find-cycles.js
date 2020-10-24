@@ -1,6 +1,8 @@
+const { cloneDeep } = require('lodash')
+
 module.exports = (n, start) => {
   // deep copy nodes
-  const nodes = { ...n }
+  const nodes = cloneDeep(n)
 
   // initializaion of parent and dist dicts
   const p = {}
@@ -61,7 +63,7 @@ module.exports = (n, start) => {
 
   return {
     path,
-    profit: Math.floor((d[start] - 1) * 100),
+    profit: ((d[start] - 1) * 100).toFixed(2),
   }
 }
 
