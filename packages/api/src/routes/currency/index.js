@@ -1,9 +1,9 @@
 const express = require('express')
 
-const currency = require('./currency')
+const getCycles = require('./get-cycles')
 
 const router = express.Router()
 
-router.use('/currency', [], currency)
+router.get('/get-cycles', [], getCycles)
 
 module.exports = router
