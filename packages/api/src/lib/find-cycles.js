@@ -3,6 +3,7 @@ const { cloneDeep } = require('lodash')
 module.exports = (n, start) => {
   // deep copy nodes
   const nodes = cloneDeep(n)
+  // console.log({n, start})
 
   // initializaion of parent and dist dicts
   const p = {}

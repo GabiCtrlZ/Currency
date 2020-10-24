@@ -1,6 +1,7 @@
 const findCycles = require('../../lib/find-cycles')
+const generateGraph = require('../../lib/generate-graph')
 
-const data = {
+const g = {
   dollar: [
     {
       to: 'euro',
@@ -51,9 +52,14 @@ module.exports = async (req, res) => {
   } = req
 
   try {
+    const graph = await generateGraph()
+    console.log(graph)
     return res.json({
       success: true,
-      data: Object.keys(data).map((coin) => findCycles(data, coin)),
+      data: {
+        cycles: Object.keys(g).map((coin) => findCycles(g, coin)),
+        graph,
+      },
     })
   } catch (e) {
     logger.error({ stack: e.stack }, `error with route ${req.url}`, { message: e.message })
