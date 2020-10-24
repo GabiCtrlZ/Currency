@@ -1,0 +1,7 @@
+const appTypes = {
+
+}
+
+export {
+  appTypes,
+}
