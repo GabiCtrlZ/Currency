@@ -17,8 +17,8 @@ export default createMuiTheme({
       dark: '#0a7ee0',
     },
     background: {
-      default: 'rgb(19, 52, 105)',
-      paper: 'rgb(65, 97, 143)',
+      default: '#f3f4fc',
+      paper: '#f8f9fd',
     },
   },
   typography: {
