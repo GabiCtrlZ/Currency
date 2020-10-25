@@ -1,8 +1,9 @@
 const { cloneDeep } = require('lodash')
+const checkCycles = require('./check-cycles')
 
-module.exports = (n, start) => {
+module.exports = (graph, start) => {
   // deep copy nodes
-  const nodes = cloneDeep(n)
+  const nodes = cloneDeep(graph)
 
   // initializaion of parent and dist dicts
   const p = {}
@@ -39,7 +40,7 @@ module.exports = (n, start) => {
         to,
       })
     }
-    edges.unshift(...nodes[to])
+    edges.unshift(...(nodes[to] || []))
     nodes[to] = []
   }
 
@@ -63,9 +64,6 @@ module.exports = (n, start) => {
 
   return {
     path,
-    profit: ((d[start] - 1) * 100).toFixed(2),
+    profit: checkCycles(graph, path),
   }
 }
-
-// [find_cycle(nodes, item) for item in nodes]
-// console.log(findCycle(data, 'dollar'))
