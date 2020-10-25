@@ -13,7 +13,15 @@ const {
 
 const COOKIE_NAME = process.env.COOKIE_NAME || 'default-App'
 
-const CURRENCIES = ['EUR', 'USD', 'ILS', 'GBP', 'JPY', 'PLN', 'NZD', 'AUD', 'CZK', 'KRW']
+const CURRENCIES = [
+  'CAD', 'HKD', 'ISK', 'PHP', 'DKK',
+  'HUF', 'CZK', 'GBP', 'RON', 'SEK',
+  'IDR', 'INR', 'BRL', 'RUB', 'HRK',
+  'JPY', 'THB', 'CHF', 'EUR', 'MYR',
+  'BGN', 'TRY', 'CNY', 'NOK', 'NZD',
+  'ZAR', 'USD', 'MXN', 'SGD', 'AUD',
+  'ILS', 'KRW', 'PLN',
+]
 
 const COOKIE_OPTIONS = {
   maxAge: 30 * 24 * 60 * 60 * 1000,

@@ -1,9 +1,11 @@
-const findCycles = require('../../lib/find-cycles')
-const generateGraph = require('../../lib/generate-graph')
+const findCycles = require('../../lib/cycles/find-cycles')
+const subCycles = require('../../lib/cycles/sub-cycles')
+const generateGraph = require('../../lib/graph/generate-graph')
 
 let graph = {}
 let day
 let cycles = []
+let sub = []
 
 module.exports = async (req, res) => {
   const {
@@ -28,12 +30,14 @@ module.exports = async (req, res) => {
 
     graph = await generateGraph(logger)
     cycles = Object.keys(graph).map((coin) => findCycles(graph, coin))
+    sub = cycles.map(({ path }) => subCycles(graph, path)).reduce((prev, curr) => [...prev, ...curr], [])
     day = today
 
     return res.json({
       success: true,
       data: {
         cycles,
+        sub,
         graph,
       },
     })

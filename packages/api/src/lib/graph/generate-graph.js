@@ -1,6 +1,6 @@
-const request = require('./request')
+const request = require('../request')
 const refactorResponse = require('./refactor-response')
-const { API_URL, CURRENCIES } = require('../consts')
+const { API_URL, CURRENCIES } = require('../../consts')
 
 module.exports = async (logger) => {
   logger.info('attempting to create graph')
