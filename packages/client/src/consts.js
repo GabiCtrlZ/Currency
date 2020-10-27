@@ -12,6 +12,23 @@ const MAIN_TABS = {
   test: 'test',
 }
 
+const MARKER = {
+  length: 10,
+  stroke: 1.7,
+}
+
+const GRAPH_RATIOS = {
+  width: 0.45,
+  height: 0.7,
+}
+
+const hexagonSide = 25
+
+const HEXAGON = {
+  width: 2 * Math.sqrt((3 * (hexagonSide ** 2)) / 4),
+  height: 2 * hexagonSide,
+}
+
 const COLORS = [
   '#7cb9e8',
   '#c9ffe5',
@@ -39,5 +56,8 @@ export {
   LANGS,
   COLORS,
   NODE_ENV,
+  GRAPH_RATIOS,
   MAIN_TABS,
+  MARKER,
+  HEXAGON,
 }
