@@ -53,7 +53,6 @@ function CyclesBody(props) {
 
   return (
     <div className={classes.container}>
-      {/* <Paper classes={{ root: classes.paper }}> */}
       <div className={classes.searchRow}>
         <TablePagination
           rowsPerPageOptions={[10, 25, 100]}
@@ -71,7 +70,6 @@ function CyclesBody(props) {
         selectedRows={selected}
         onSelectToggle={handleSelectToggle}
       />
-      {/* </Paper> */}
     </div>
   )
 }
