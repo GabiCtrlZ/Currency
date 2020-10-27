@@ -21,6 +21,7 @@ module.exports = async (req, res) => {
         success: true,
         data: {
           cycles,
+          subCycles: sub,
           graph,
         },
       })
@@ -37,7 +38,7 @@ module.exports = async (req, res) => {
       success: true,
       data: {
         cycles,
-        sub,
+        subCycles: sub,
         graph,
       },
     })

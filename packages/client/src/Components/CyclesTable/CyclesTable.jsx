@@ -2,7 +2,7 @@ import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import { connect } from 'react-redux'
 import CyclesHeader from './CyclesHeader'
-import CyclesBody from './CyclesBody'
+import CyclesBody from './CyclesBody/CyclesBody'
 
 const useStyles = makeStyles(({ spacing }) => ({
   container: {
@@ -10,7 +10,6 @@ const useStyles = makeStyles(({ spacing }) => ({
     flexDirection: 'column',
     overflow: 'hidden',
     flexGrow: 1,
-    color: 'white',
   },
   headerContainer: {
     margin: spacing(4),
