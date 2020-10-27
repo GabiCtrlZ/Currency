@@ -2,6 +2,8 @@ import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import { connect } from 'react-redux'
 
+import GraphBody from './GraphBody'
+
 const useStyles = makeStyles(() => ({
   container: {
     display: 'flex',
@@ -16,7 +18,10 @@ function GraphView(props) {
 
   return (
     <div className={classes.container}>
-      Graph View
+      <div style={{ height: 50 }}>
+        header
+      </div>
+      <GraphBody />
     </div>
   )
 }
