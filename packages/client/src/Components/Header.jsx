@@ -48,8 +48,8 @@ function Header(props) {
       classes={{ root: classes.appBar }}
     >
       <div className={classes.logoContainer}>
-        <Logo />
-        <div>Currency</div>
+        {/* <Logo />
+        <div>Currency</div> */}
       </div>
     </AppBar>
   )

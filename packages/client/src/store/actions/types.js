@@ -6,7 +6,12 @@ const appTypes = {
   getCycles: 'GET_CYCLES',
 }
 
+const selectedTypes = {
+  setSelected: 'SET_SELECTED',
+}
+
 export {
   appTypes,
+  selectedTypes,
   API,
 }

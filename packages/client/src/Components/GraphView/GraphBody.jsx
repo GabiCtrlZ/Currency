@@ -72,8 +72,8 @@ function GraphBody(props) {
   )
 }
 
-const mapStateToProps = ({ app }) => ({
-  cycle: app.cycles.length ? app.cycles[1].path : [],
+const mapStateToProps = ({ app, selectedCycle }) => ({
+  cycle: app.cycles.length ? app.cycles[selectedCycle].path : [],
 })
 
 export default connect(mapStateToProps)(GraphBody)
