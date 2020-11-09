@@ -66,6 +66,8 @@ function CyclesBody(props) {
       </div>
       <Divider />
       <CyclesBodyTable
+        rowsPerPage={rowsPerPage}
+        page={page}
         valuesList={pageValues()}
         selectedRows={selected}
         onSelectToggle={handleSelectToggle}

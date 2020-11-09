@@ -47,6 +47,8 @@ function CyclesBodyTable(props) {
   const {
     valuesList,
     dispatch,
+    rowsPerPage,
+    page,
     selectedCycle,
   } = props
 
@@ -72,11 +74,8 @@ function CyclesBodyTable(props) {
           <ListItem
             key={profit}
             button
-            selected={i === selectedCycle}
-            onClick={() => {
-              console.log('clickes')
-              dispatch(setSelectedCycle(i))
-            }}
+            selected={(i + (page * rowsPerPage)) === selectedCycle}
+            onClick={() =>  dispatch(setSelectedCycle(i + (page * rowsPerPage)))}
             classes={{
               root: classes.listItem,
               selected: classes.selected,
