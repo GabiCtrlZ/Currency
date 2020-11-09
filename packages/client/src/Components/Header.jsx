@@ -1,4 +1,5 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom'
 import { fade, makeStyles } from '@material-ui/core/styles'
 import AppBar from '@material-ui/core/AppBar'
 import { connect } from 'react-redux'
@@ -24,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
   },
   logoContainer: {
     display: 'flex',
+    cursor: 'pointer',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'flex-start',
@@ -39,6 +41,7 @@ const useStyles = makeStyles((theme) => ({
 
 function Header(props) {
   const classes = useStyles(props)
+  const history = useHistory()
 
   return (
     <AppBar
@@ -47,9 +50,14 @@ function Header(props) {
       position="static"
       classes={{ root: classes.appBar }}
     >
-      <div className={classes.logoContainer}>
-        {/* <Logo />
-        <div>Currency</div> */}
+      <div
+        role="button"
+        tabIndex={0}
+        className={classes.logoContainer}
+        onClick={() => history.push('/')}
+      >
+        <Logo />
+        <div>Currency</div>
       </div>
     </AppBar>
   )

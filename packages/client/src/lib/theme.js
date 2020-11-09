@@ -108,7 +108,7 @@ export default createMuiTheme({
     topMenuHeight: 60,
     intentListWidth: 380,
     entitiesListWidth: 300,
-    cardSize: 145,
+    cardSize: 190,
     cardSizeHeight: 125,
     tagEditorMaxWidth: 1200,
   },

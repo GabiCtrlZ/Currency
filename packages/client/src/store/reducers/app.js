@@ -5,9 +5,9 @@ import { appTypes } from '../actions/types'
 const initialState = Immutable({
   graph: {},
   cycles: [],
-  subCycles: [],
 })
 
 export default handleActions({
-  [appTypes.getCycles]: (state, { data }) => Immutable(data),
+  [appTypes.getGraph]: (state, { data: { graph } }) => state.set('graph', graph),
+  [appTypes.getCycles]: (state, { data: { cycles } }) => state.set('cycles', cycles),
 }, initialState)

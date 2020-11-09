@@ -14,13 +14,13 @@ const {
 const COOKIE_NAME = process.env.COOKIE_NAME || 'default-App'
 
 const CURRENCIES = [
-  'CAD', 'HKD', 'ISK', 'PHP', 'DKK',
+  'ILS', 'KRW', 'USD', 'EUR', 'THB',
+  'PHP', 'RUB', 'JPY', 'BRL', 'DKK',
+  'CAD', 'HKD', 'ISK', 'IDR', 'INR',
   'HUF', 'CZK', 'GBP', 'RON', 'SEK',
-  'IDR', 'INR', 'BRL', 'RUB', 'HRK',
-  'JPY', 'THB', 'CHF', 'EUR', 'MYR',
   'BGN', 'TRY', 'CNY', 'NOK', 'NZD',
-  'ZAR', 'USD', 'MXN', 'SGD', 'AUD',
-  'ILS', 'KRW', 'PLN',
+  'ZAR', 'PLN', 'MXN', 'SGD', 'AUD',
+  'CHF', 'MYR', 'HRK',
 ]
 
 const COOKIE_OPTIONS = {

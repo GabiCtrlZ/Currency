@@ -21,7 +21,7 @@ function PlotPointAndLine(props) {
         position: 'absolute',
         top: y,
         left: x,
-        animationDelay: `${animationDelay * index}ms`
+        animationDelay: `${animationDelay * index}ms`,
       }}
       />
       <Line
