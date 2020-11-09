@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
+import { useRouteMatch } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { Grid } from '@material-ui/core'
 
 import CyclesTable from '../CyclesTable/CyclesTable'
 import GraphView from '../GraphView/GraphView'
+import { getCycles } from '../../store/actions/app'
 
 const useStyles = makeStyles(() => ({
   container: {
@@ -17,6 +19,15 @@ const useStyles = makeStyles(() => ({
 
 function CurrencyScreen(props) {
   const classes = useStyles(props)
+  const { dispatch } = props
+  const { params: { id } } = useRouteMatch('/currency/:id')
+
+  useEffect(() => {
+    const fun = async () => {
+      dispatch(getCycles(id))
+    }
+    fun()
+  }, [])
 
   return (
     <div className={classes.container}>

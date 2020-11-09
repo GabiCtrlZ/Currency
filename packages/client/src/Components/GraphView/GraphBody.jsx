@@ -5,10 +5,11 @@ import { connect } from 'react-redux'
 
 import PlotPointAndLine from './VisualizeGraph/PlotPointAndLine'
 import graphPositions from '../../lib/graph-positions'
-import { 
+import {
   HEXAGON,
   GRAPH_RATIOS
- } from '../../consts'
+} from '../../consts'
+import { get } from 'lodash'
 
 const useStyles = makeStyles(() => ({
   container: {
@@ -73,7 +74,7 @@ function GraphBody(props) {
 }
 
 const mapStateToProps = ({ app, selectedCycle }) => ({
-  cycle: app.cycles.length ? app.cycles[selectedCycle].path : [],
+  cycle: app.cycles.length ? get(app.cycles[selectedCycle], 'path', []) : [],
 })
 
 export default connect(mapStateToProps)(GraphBody)

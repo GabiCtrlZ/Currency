@@ -17,12 +17,10 @@ const useStyles = makeStyles(({ spacing, palette }) => ({
     },
   },
   list: {
-    // background: 'white',
     borderRadius: 8,
     marginTop: spacing(2),
     padding: 0,
     overflowY: 'auto',
-    marginTop: 2,
   },
   listItem: {
     transition: 'all 150ms ease-in-out',
@@ -75,15 +73,12 @@ function CyclesBodyTable(props) {
             key={profit}
             button
             selected={(i + (page * rowsPerPage)) === selectedCycle}
-            onClick={() =>  dispatch(setSelectedCycle(i + (page * rowsPerPage)))}
+            onClick={() => dispatch(setSelectedCycle(i + (page * rowsPerPage)))}
             classes={{
               root: classes.listItem,
               selected: classes.selected,
             }}
           >
-            {/* <ListItemIcon>
-              {renderIcon(path[0].parent)}
-            </ListItemIcon> */}
             <ListItemText>
               <span>{path[0].parent}</span>
             </ListItemText>

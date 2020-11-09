@@ -1,8 +1,8 @@
-/* eslint-disable import/prefer-default-export */
 const API = 'API'
 
 const appTypes = {
   backToState: 'BACK_TO_STATE',
+  getGraph: 'GET_GRAPH',
   getCycles: 'GET_CYCLES',
 }
 

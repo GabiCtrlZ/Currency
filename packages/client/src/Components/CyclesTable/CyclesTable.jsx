@@ -32,8 +32,9 @@ function CyclesTable(props) {
   )
 }
 
-const mapStateToProps = ({ app: { cycles } }) => ({
+const mapStateToProps = ({ app: { cycles, subCycles } }) => ({
   cycles,
+  subCycles,
 })
 
 export default connect(mapStateToProps)(CyclesTable)

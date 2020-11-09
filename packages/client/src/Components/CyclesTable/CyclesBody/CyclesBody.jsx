@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import { connect } from 'react-redux'
-// import Paper from '@material-ui/core/Paper'
 import Divider from '@material-ui/core/Divider'
 import { TablePagination } from '@material-ui/core'
 import CyclesBodyTable from './CyclesBodyTable'
@@ -76,8 +75,9 @@ function CyclesBody(props) {
   )
 }
 
-const mapStateToProps = ({ app }) => ({
-  cycles: app.cycles,
+const mapStateToProps = ({ app: { cycles, subCycles } }) => ({
+  cycles,
+  subCycles,
 })
 
 export default connect(mapStateToProps)(CyclesBody)
