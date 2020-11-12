@@ -36,7 +36,7 @@ module.exports = async (req, res) => {
       return res.json({
         success: true,
         data: {
-          cycles: findOptimalRoutes([...cycles, ...sub], currency, filterByCurrency),
+          cycles: findOptimalRoutes(sub, currency, filterByCurrency),
         },
       })
     }
@@ -51,7 +51,7 @@ module.exports = async (req, res) => {
     return res.json({
       success: true,
       data: {
-        cycles: findOptimalRoutes([...cycles, ...sub], currency, filterByCurrency),
+        cycles: findOptimalRoutes(sub, currency, filterByCurrency),
       },
     })
   } catch (e) {
