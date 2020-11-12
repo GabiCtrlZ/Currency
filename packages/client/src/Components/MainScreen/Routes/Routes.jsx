@@ -100,7 +100,7 @@ function Routes(props) {
       {!isLoadingRoutes && !!cycles.length && (
         <>
           <div className={classes.title}>
-            Possiable routes
+            Possible routes
           </div>
           <List aria-label="routes list">
             {cycles.slice(0, 5).map(({ path, profit }, i) => (
@@ -126,9 +126,9 @@ function Routes(props) {
                   <div
                     className={classes.listText}
                   >
-                    {`Profit: ${parseFloat((profit * 1000).toFixed(3))}%`}
+                    {`Profit: ${parseFloat((profit).toFixed(3))}%`}
                   </div>
-                  {i === 0 && (
+                  {(i === 0) && (
                     <div className={classes.tagsContainer}>
                       <span>
                         OPTIMAL
@@ -137,7 +137,7 @@ function Routes(props) {
                   )}
                 </div>
                 <div className={classes.profitPerStep}>
-                  {`Average profit per step: ${parseFloat(((profit * 1000) / path.length).toFixed(3))}`}
+                  {`Average profit per step: ${parseFloat(((profit) / path.length).toFixed(3))}`}
                 </div>
                 <div className={classes.routeLength}>
                   {`Route length: ${path.length}`}
