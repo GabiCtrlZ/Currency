@@ -7,9 +7,9 @@ import ArimoHeBold from '../assets/fonts/Arimo-Bold.ttf'
 export default createMuiTheme({
   palette: {
     primary: {
-      light: '#ace6e1',
-      main: '#6aded4',
-      dark: '#23e8d8',
+      light: '#44a5e5',
+      main: '#3b9af7',
+      dark: '#12a1ff',
     },
     secondary: {
       light: '#7bacd6',
@@ -17,8 +17,8 @@ export default createMuiTheme({
       dark: '#0a7ee0',
     },
     background: {
-      default: '#f3f4fc',
-      paper: '#f8f9fd',
+      default: 'rgb(240,242,246)',
+      paper: '#fff',
     },
   },
   typography: {
@@ -57,7 +57,7 @@ export default createMuiTheme({
               url(${MuliRegulrar}) format('truetype')
             `,
             unicodeRange:
-            // eslint-disable-next-line max-len
+              // eslint-disable-next-line max-len
               'U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF',
           },
           {
@@ -69,7 +69,7 @@ export default createMuiTheme({
               url(${MuliBold}) format('truetype')
             `,
             unicodeRange:
-            // eslint-disable-next-line max-len
+              // eslint-disable-next-line max-len
               'U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF',
           },
           {
@@ -81,7 +81,7 @@ export default createMuiTheme({
               url(${ArimoHeRegulrar}) format('truetype')
             `,
             unicodeRange:
-            // eslint-disable-next-line max-len
+              // eslint-disable-next-line max-len
               'U+0590-05FF, U+20AA, U+25CC, U+FB1D-FB4F',
           },
           {
@@ -93,7 +93,7 @@ export default createMuiTheme({
               url(${ArimoHeBold}) format('truetype')
             `,
             unicodeRange:
-            // eslint-disable-next-line max-len
+              // eslint-disable-next-line max-len
               'U+0590-05FF, U+20AA, U+25CC, U+FB1D-FB4F',
           },
         ],

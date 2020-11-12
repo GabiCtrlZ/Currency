@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 import { useSnackbar } from 'notistack'
 import { Route, Switch } from 'react-router-dom'
 
-import Header from './Components/Header'
 import Loader from './Components/Loader'
 import { setEnqueueSnackbar } from './lib/snackbar'
 import MainRouter from './MainRouter'
@@ -44,7 +43,6 @@ function App(props) {
 
   return (
     <div className={classes.app}>
-      <Header />
       <Switch>
         <Route path="/">
           <div className={classes.content}>
