@@ -11,5 +11,5 @@ module.exports = async (logger) => {
     method: 'GET',
   })))
 
-  return values.reduce((pre, { data }) => ({ ...pre, [data.base]: refactorResponse(data) }), {})
+  return values.filter(({ data }) => data).reduce((pre, { data }) => ({ ...pre, [data.base]: refactorResponse(data) }), {})
 }

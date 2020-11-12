@@ -3,10 +3,11 @@ import { makeStyles } from '@material-ui/core/styles'
 import Drawer from '@material-ui/core/Drawer'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import AppBar from '@material-ui/core/AppBar'
+import { Divider } from '@material-ui/core'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import CoinDirections from './CoinDirections/CoinDirections'
-import { Divider } from '@material-ui/core'
+import Routes from './Routes/Routes'
 
 const drawerWidth = 386
 
@@ -61,7 +62,7 @@ export default function SearchDrawer() {
       >
         <CoinDirections />
         <Divider className={classes.divider} />
-        Possiable routes
+        <Routes />
       </Drawer>
       <main className={classes.content}>
         <div className={classes.toolbar} />

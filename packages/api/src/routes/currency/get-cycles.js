@@ -1,11 +1,13 @@
 const Joi = require('@hapi/joi')
 
 const findCycles = require('../../lib/cycles/find-cycles')
+const findOptimalRoutes = require('../../lib/cycles/find-optimal-routes')
 const subCycles = require('../../lib/cycles/sub-cycles')
 const generateGraph = require('../../lib/graph/generate-graph')
 
 const schema = Joi.object({
-  currency: Joi.string().optional(),
+  currency: Joi.string().optional().allow(''),
+  filterByCurrency: Joi.boolean().optional(),
 })
 
 let graph = {}
@@ -22,7 +24,10 @@ module.exports = async (req, res) => {
   try {
     Joi.assert(body, schema)
 
-    const { currency } = body
+    const {
+      currency,
+      filterByCurrency,
+    } = body
 
     const today = new Date().getDay()
     if (today === day) {
@@ -31,10 +36,7 @@ module.exports = async (req, res) => {
       return res.json({
         success: true,
         data: {
-          cycles: [
-            ...cycles.filter(({ path }) => path[0].parent === currency),
-            ...sub.filter(({ path }) => path[0].parent === currency),
-          ],
+          cycles: findOptimalRoutes([...cycles, ...sub], currency, filterByCurrency),
         },
       })
     }
@@ -49,10 +51,7 @@ module.exports = async (req, res) => {
     return res.json({
       success: true,
       data: {
-        cycles: [
-          ...cycles.filter(({ path }) => path[0].parent === currency),
-          ...sub.filter(({ path }) => path[0].parent === currency),
-        ],
+        cycles: findOptimalRoutes([...cycles, ...sub], currency, filterByCurrency),
       },
     })
   } catch (e) {

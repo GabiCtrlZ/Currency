@@ -2,7 +2,6 @@ import React from 'react'
 import Container from '@material-ui/core/Container'
 import LinearScaleIcon from '@material-ui/icons/LinearScale'
 import {
-  Divider,
   FormControl,
   makeStyles,
   MenuItem,
@@ -18,9 +17,6 @@ const useStyles = makeStyles((theme) => ({
     margin: `${theme.spacing(2)}px 0 ${theme.spacing()}px ${theme.spacing(4)}px`,
     minWidth: 150,
   },
-  divider: {
-    margin: `${theme.spacing(3)}px ${theme.spacing(7)}px 0 ${theme.spacing(10)}px`,
-  },
 }), { name: 'MaxCycleLength' })
 
 export default function MaxCycleLength() {
@@ -28,7 +24,6 @@ export default function MaxCycleLength() {
 
   return (
     <>
-      <Divider className={classes.divider} />
       <Container maxWidth="sm" className={classes.container}>
         <LinearScaleIcon style={{ color: 'gray' }} />
         <FormControl className={classes.formControl}>
