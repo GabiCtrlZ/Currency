@@ -1,6 +1,6 @@
 let counter = 1
 
-module.exports = (path) => {
+export default (path) => {
   if (!path.length) return null
 
   const nodes = {}

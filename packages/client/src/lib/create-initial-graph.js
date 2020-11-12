@@ -1,4 +1,4 @@
-module.exports = (arr) => {
+export default (arr) => {
   const nodes = arr.map((label, id) => ({
     id,
     label,

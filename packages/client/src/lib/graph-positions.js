@@ -69,7 +69,7 @@ const v2 = (num, w, h, x, y) => {
   return [...first, ...second]
 }
 
-module.exports = (num, w, h, x, y) => {
+export default (num, w, h, x, y) => {
   if (num > 16) return v2(num, w, h, x, y)
   return v1(num, w, h, x, y)
 }

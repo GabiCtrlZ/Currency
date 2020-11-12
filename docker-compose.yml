@@ -12,7 +12,7 @@ services:
     container_name: nginx
     image: 'docker.io/bitnami/nginx:1.19-debian-10'
     depends_on:
-      - answer
+      - currency
     networks: 
       - default
     ports:
