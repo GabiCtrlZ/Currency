@@ -126,7 +126,7 @@ function Routes(props) {
                   <div
                     className={classes.listText}
                   >
-                    {`Profit: ${parseFloat((profit).toFixed(3))}%`}
+                    {`Profit: ${parseFloat((profit < 0.1 ? profit * 1000 : profit).toFixed(3))}%`}
                   </div>
                   {(i === 0) && (
                     <div className={classes.tagsContainer}>
@@ -137,7 +137,8 @@ function Routes(props) {
                   )}
                 </div>
                 <div className={classes.profitPerStep}>
-                  {`Average profit per step: ${parseFloat(((profit) / path.length).toFixed(3))}`}
+                  {`Average profit per step: ${parseFloat(((profit < 0.1 ? profit * 1000 : profit) / path.length)
+                    .toFixed(3))}`}
                 </div>
                 <div className={classes.routeLength}>
                   {`Route length: ${path.length}`}
