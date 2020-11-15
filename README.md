@@ -14,13 +14,14 @@ We can simply view currency exchanges as a graph and using Bellman Ford Algorith
 
 main page:
 
-<img src="https://raw.githubusercontent.com/GabiCtrlZ/Currency/master/packages/readme-pics/main-screen.jpeg" alt="MainScreen" />
+<img src="https://raw.githubusercontent.com/GabiCtrlZ/Currency/master/packages/readme-pics/main-screen.jpeg" alt="MainScreen" 
+    width="300" height="570" />
 
 
 Search for every coin you want (or just get the best available routes regardless of the coin)
 
 <img src="https://raw.githubusercontent.com/GabiCtrlZ/Currency/master/packages/readme-pics/search-tab.jpeg" alt="search"
-	width="300" height="570" />
+	width="430" height="570" />
 
 Choose the path (optimal path is determined by profit per action)
 
@@ -30,7 +31,7 @@ Choose the path (optimal path is determined by profit per action)
 Enjoy
 
 <img src="https://raw.githubusercontent.com/GabiCtrlZ/Currency/master/packages/readme-pics/enjoy.jpeg" alt="enjoy"
-	width="550" height="570" />
+	width="750" height="570" />
 
 
 
