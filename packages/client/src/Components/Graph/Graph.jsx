@@ -11,8 +11,8 @@ const options = {
   nodes: {
     shape: 'hexagon',
   },
-  height: '850px',
-  width: '1500px',
+  height: `${window.innerHeight - 64}px`,
+  width: `${window.innerWidth - 386}px`,
   physics: true,
   edges: {
     smooth: true,

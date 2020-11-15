@@ -32,15 +32,15 @@ export default function MaxCycleLength() {
             disableUnderline
             onChange={() => { }}
             displayEmpty
-            inputProps={{ 'aria-label': 'Max cycle length' }}
+            inputProps={{ 'aria-label': 'Useless select' }}
           >
             <MenuItem value="">
-              Max cycle length
+              Useless select
             </MenuItem>
-            <MenuItem value={Infinity}>Unlimited</MenuItem>
-            <MenuItem value={30}>30</MenuItem>
-            <MenuItem value={10}>10</MenuItem>
-            <MenuItem value={5}>5</MenuItem>
+            <MenuItem value={Infinity}>Why is it here?</MenuItem>
+            <MenuItem value={30}>Did The developer simply forgot?</MenuItem>
+            <MenuItem value={10}>Or was there a purpose</MenuItem>
+            <MenuItem value={5}>For this select</MenuItem>
           </Select>
         </FormControl>
       </Container>
