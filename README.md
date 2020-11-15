@@ -29,8 +29,7 @@ Choose the path (optimal path is determined by profit per action)
 
 Enjoy
 
-<img src="https://raw.githubusercontent.com/GabiCtrlZ/Currency/master/packages/readme-pics/enjoy.jpeg" alt="enjoy"
-	width="750" height="570" />
+<img src="https://raw.githubusercontent.com/GabiCtrlZ/Currency/master/packages/readme-pics/enjoy.jpeg" alt="enjoy"/>
 
 
 
