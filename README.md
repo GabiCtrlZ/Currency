@@ -14,8 +14,7 @@ We can simply view currency exchanges as a graph and using Bellman Ford Algorith
 
 main page:
 
-<img src="https://raw.githubusercontent.com/GabiCtrlZ/Currency/master/packages/readme-pics/main-screen.jpeg" alt="MainScreen" 
-    width="300" height="570" />
+<img src="https://raw.githubusercontent.com/GabiCtrlZ/Currency/master/packages/readme-pics/main-screen.jpeg" alt="MainScreen" />
 
 
 Search for every coin you want (or just get the best available routes regardless of the coin)
